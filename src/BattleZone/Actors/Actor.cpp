@@ -1,4 +1,5 @@
 #include <math.h>
+#include "../Math/Position.h"
 #include "Actor.h"
 
 void Actor::UpdateCorners()
@@ -8,13 +9,13 @@ void Actor::UpdateCorners()
 	float halfWidth = Width / 2;
 	float halfHeight = Height / 2;
 
-	ux.x = cos(Position.Direction);
-	ux.y = sin(Position.Direction);
-	uy.x = -sin(Position.Direction);
-	uy.y = cos(Position.Direction);
+	ux.x = cos(ItemPosition.Direction);
+	ux.y = sin(ItemPosition.Direction);
+	uy.x = -sin(ItemPosition.Direction);
+	uy.y = cos(ItemPosition.Direction);
 	
-	corners[0] = Point{ halfWidth * ux.x + halfHeight * uy.x + Position.x, halfWidth * ux.y + halfHeight * uy.y + Position.y };
-	corners[1] = Point{ -halfWidth * ux.x + halfHeight * uy.x + Position.x, -halfWidth * ux.y + halfHeight * uy.y + Position.y };
-	corners[2] = Point{ halfWidth * ux.x + -halfHeight * uy.x + Position.x, halfWidth * ux.y + -halfHeight * uy.y + Position.y };
-	corners[3] = Point{ -halfWidth * ux.x + -halfHeight * uy.x + Position.x, -halfWidth * ux.y + -halfHeight * uy.y + Position.y };
+	corners[0] = Point{ halfWidth * ux.x + halfHeight * uy.x + ItemPosition.x, halfWidth * ux.y + halfHeight * uy.y + ItemPosition.y };
+	corners[1] = Point{ -halfWidth * ux.x + halfHeight * uy.x + ItemPosition.x, -halfWidth * ux.y + halfHeight * uy.y + ItemPosition.y };
+	corners[2] = Point{ halfWidth * ux.x + -halfHeight * uy.x + ItemPosition.x, halfWidth * ux.y + -halfHeight * uy.y + ItemPosition.y };
+	corners[3] = Point{ -halfWidth * ux.x + -halfHeight * uy.x + ItemPosition.x, -halfWidth * ux.y + -halfHeight * uy.y + ItemPosition.y };
 }

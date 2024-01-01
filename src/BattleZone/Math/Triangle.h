@@ -13,3 +13,8 @@ struct Triangle
 		Point pointList[3];
 	};
 };
+
+
+bool TriangleTriangleCollision(const Triangle& triangle1,
+	const Triangle& triangle2,
+	double eps = 0.0, bool allowReversed = true, bool onBoundary = true);
